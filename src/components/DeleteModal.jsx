@@ -20,6 +20,7 @@ function DeleteModal({ product, onClose, onConfirm }) {
             <div className="preview-id">ID: {product.id}</div>
             <div className="preview-name">{product.name}</div>
             <div className="preview-price">{formatPrice(product.price)}</div>
+            <div className="preview-quantity">Stok: {product.quantity}</div>
           </div>
           <div className="modal-actions">
             <button className="xp-button" onClick={onClose}>Batal</button>

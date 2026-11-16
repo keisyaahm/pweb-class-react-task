@@ -9,7 +9,11 @@ export function ProductProvider({ children }) {
   const [products, setProducts] = useState(() => {
     try {
       const stored = localStorage.getItem(STORAGE_KEY)
-      return stored ? JSON.parse(stored) : initialProducts
+      const savedProducts = stored ? JSON.parse(stored) : initialProducts
+      return savedProducts.map((product) => ({
+        ...product,
+        quantity: product.quantity ?? 0,
+      }))
     } catch {
       return initialProducts
     }
@@ -21,13 +25,13 @@ export function ProductProvider({ children }) {
 
   const nextId = () => Math.max(...products.map((p) => p.id), 0) + 1
 
-  const addProduct = ({ name, price }) => {
-    setProducts((prev) => [...prev, { id: nextId(), name, price }])
+  const addProduct = ({ name, price, quantity }) => {
+    setProducts((prev) => [...prev, { id: nextId(), name, price, quantity }])
   }
 
-  const updateProduct = (id, { name, price }) => {
+  const updateProduct = (id, { name, price, quantity }) => {
     setProducts((prev) =>
-      prev.map((p) => (p.id === id ? { ...p, name, price } : p))
+      prev.map((p) => (p.id === id ? { ...p, name, price, quantity } : p))
     )
   }
 

@@ -288,6 +288,13 @@ body::before {
   font-size: 16px;
   color: #0a5ec4;
   font-weight: bold;
+  margin-bottom: 2px;
+}
+
+.product-quantity {
+  font-size: 13px;
+  color: #555;
+  font-weight: 600;
   margin-bottom: 18px;
 }
 
@@ -480,6 +487,11 @@ body::before {
   font-weight: bold;
 }
 
+.modal-product-preview .preview-quantity {
+  color: #555;
+  font-weight: 600;
+}
+
 .empty-state {
   text-align: center;
   padding: 30px;
@@ -514,7 +526,7 @@ body::before {
 
 .about-stat-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
   margin-bottom: 18px;
 }

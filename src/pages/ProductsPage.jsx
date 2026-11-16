@@ -17,13 +17,13 @@ function ProductsPage() {
     p.name.toLowerCase().includes(query.toLowerCase())
   )
 
-  const handleAdd = ({ name, price }) => {
-    addProduct({ name, price })
+  const handleAdd = ({ name, price, quantity }) => {
+    addProduct({ name, price, quantity })
     setShowAdd(false)
   }
 
-  const handleEdit = ({ name, price }) => {
-    updateProduct(editTarget.id, { name, price })
+  const handleEdit = ({ name, price, quantity }) => {
+    updateProduct(editTarget.id, { name, price, quantity })
     setEditTarget(null)
   }
 

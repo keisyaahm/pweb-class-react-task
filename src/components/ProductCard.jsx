@@ -11,6 +11,7 @@ function ProductCard({ product, onEdit, onDelete }) {
       <div className="product-id">ID: {product.id}</div>
       <div className="product-name">{product.name}</div>
       <div className="product-price">{formatPrice(product.price)}</div>
+      <div className="product-quantity">Stok: {product.quantity}</div>
       <div className="card-actions">
         <button className="xp-button edit-btn" onClick={() => onEdit(product)}>
           Edit

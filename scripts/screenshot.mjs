@@ -30,7 +30,7 @@ const clearSearch = async () => {
   await new Promise(r => setTimeout(r, 300))
 }
 
-await page.goto('http://localhost:5173', { waitUntil: 'networkidle0' })
+await page.goto('http://localhost:5173', { waitUntil: 'domcontentloaded' })
 await new Promise(r => setTimeout(r, 1500))
 await shot('01-halaman-utama.png')
 
@@ -42,14 +42,15 @@ const addBtn = await page.$('.xp-button.primary')
 await addBtn.click()
 await shot('03-modal-tambah-produk.png')
 
+const nameInput = await page.$('.modal-body .xp-input[placeholder="Contoh: Pulpen"]')
+await nameInput.type('Stabilo')
 const submitBtn = await page.$('.modal-body .xp-button.primary')
 await submitBtn.click()
 await shot('04-validasi-harga-kosong.png')
 
-const nameInput = await page.$('.modal-body .xp-input[placeholder="Contoh: Pulpen"]')
-await nameInput.type('Stabilo')
-const priceInput = await page.$('.modal-body input[type="number"]')
+const [priceInput, quantityInput] = await page.$$('.modal-body input[type="number"]')
 await priceInput.type('7500')
+await quantityInput.type('20')
 await submitBtn.click()
 await shot('05-produk-baru-ditambahkan.png')
 
@@ -57,9 +58,11 @@ const editBtns = await page.$$('.xp-button.edit-btn')
 await editBtns[0].click()
 await shot('06-modal-edit-produk.png')
 
-const editPrice = await page.$('.modal-body input[type="number"]')
+const [editPrice, editQuantity] = await page.$$('.modal-body input[type="number"]')
 await editPrice.click({ clickCount: 3 })
 await editPrice.type('6000')
+await editQuantity.click({ clickCount: 3 })
+await editQuantity.type('25')
 const saveChangeBtn = await page.$('.modal-body .xp-button.primary')
 await saveChangeBtn.click()
 await shot('07-produk-berhasil-diedit.png')

@@ -2,7 +2,8 @@ import { useProducts } from '../context/ProductContext.jsx'
 
 function AboutPage() {
   const { products } = useProducts()
-  const totalValue = products.reduce((sum, p) => sum + p.price, 0)
+  const totalQuantity = products.reduce((sum, p) => sum + p.quantity, 0)
+  const totalValue = products.reduce((sum, p) => sum + p.price * p.quantity, 0)
   const formatPrice = (price) =>
     new Intl.NumberFormat('id-ID', {
       style: 'currency',
@@ -24,6 +25,10 @@ function AboutPage() {
       </div>
 
       <div className="about-stat-grid">
+        <div className="about-stat">
+          <span className="about-stat-label">Total Stok</span>
+          <span className="about-stat-value">{totalQuantity}</span>
+        </div>
         <div className="about-stat">
           <span className="about-stat-label">Total Produk</span>
           <span className="about-stat-value">{products.length}</span>
