@@ -8,7 +8,7 @@
 
 body {
   font-family: 'Tahoma', Verdana, Geneva, sans-serif;
-  font-size: 11px;
+  font-size: 14px;
   background-color: #3a6ea5;
   background-image:
     radial-gradient(ellipse at 20% 50%, #4a85c8 0%, transparent 50%),
@@ -17,13 +17,14 @@ body {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  padding: 24px 16px 40px;
+  padding: 24px clamp(12px, 3vw, 42px) 40px;
   color: #000;
 }
 
 .xp-window {
   width: 100%;
-  max-width: 900px;
+  max-width: 1280px;
+  min-height: calc(100vh - 64px);
   border: 2px solid #0a246a;
   border-radius: 8px 8px 4px 4px;
   box-shadow:
@@ -59,7 +60,7 @@ body {
 .xp-titlebar-title {
   color: #fff;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 15px;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   letter-spacing: 0.3px;
 }
@@ -70,12 +71,12 @@ body {
 }
 
 .xp-titlebar-btn {
-  width: 21px;
-  height: 21px;
+  width: 28px;
+  height: 25px;
   border-radius: 3px;
   border: 1px solid rgba(255, 255, 255, 0.4);
   cursor: pointer;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: bold;
   display: flex;
   align-items: center;
@@ -113,11 +114,11 @@ body {
 }
 
 .xp-menubar-item {
-  padding: 2px 6px;
+  padding: 5px 10px;
   cursor: default;
   border: 1px solid transparent;
   border-radius: 2px;
-  font-size: 11px;
+  font-size: 13px;
   color: #000;
   background: none;
 }
@@ -145,7 +146,8 @@ body {
 
 .xp-window-content {
   background: #ece9d8;
-  padding: 12px 14px;
+  padding: 20px 24px 28px;
+  min-height: calc(100vh - 124px);
 }
 
 .xp-panel {
@@ -153,7 +155,7 @@ body {
   border: 2px solid;
   border-color: #aca899 #fff #fff #aca899;
   box-shadow: 1px 1px 0 #fff inset;
-  padding: 12px;
+  padding: 20px;
   margin-bottom: 10px;
 }
 
@@ -161,9 +163,9 @@ body {
   background: linear-gradient(180deg, #4f9cf7 0%, #0a6cce 8%, #0a5acd 100%);
   color: #fff;
   font-weight: bold;
-  font-size: 11px;
-  padding: 3px 8px;
-  margin: -12px -12px 10px -12px;
+  font-size: 14px;
+  padding: 7px 12px;
+  margin: -20px -20px 18px -20px;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
 }
 
@@ -171,18 +173,18 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 10px;
+  margin-bottom: 18px;
 }
 
 .page-header-text h1 {
-  font-size: 16px;
+  font-size: 24px;
   font-weight: bold;
   color: #0a246a;
   margin-bottom: 2px;
 }
 
 .page-header-text p {
-  font-size: 11px;
+  font-size: 14px;
   color: #555;
 }
 
@@ -194,7 +196,7 @@ body {
 }
 
 .product-count {
-  font-size: 11px;
+  font-size: 13px;
   color: #333;
 }
 
@@ -202,9 +204,9 @@ body {
   border: 2px solid;
   border-color: #7f9db9 #fff #fff #7f9db9;
   background: #fff;
-  padding: 2px 4px;
+  padding: 7px 9px;
   font-family: 'Tahoma', sans-serif;
-  font-size: 11px;
+  font-size: 13px;
   color: #000;
   outline: none;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1) inset;
@@ -215,14 +217,14 @@ body {
 }
 
 .search-input {
-  width: 220px;
+  width: min(360px, 55vw);
 }
 
 .product-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-  margin-bottom: 10px;
+  gap: 16px;
+  margin-bottom: 18px;
 }
 
 .product-card {
@@ -230,44 +232,45 @@ body {
   border: 2px solid;
   border-color: #aca899 #fff #fff #aca899;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
-  padding: 8px 10px;
+  padding: 16px;
+  min-height: 145px;
 }
 
 .product-id {
-  font-size: 10px;
+  font-size: 12px;
   color: #808080;
   margin-bottom: 2px;
 }
 
 .product-name {
-  font-size: 13px;
+  font-size: 18px;
   font-weight: bold;
   color: #0a246a;
   margin-bottom: 2px;
 }
 
 .product-price {
-  font-size: 12px;
+  font-size: 16px;
   color: #0a5ec4;
   font-weight: bold;
-  margin-bottom: 8px;
+  margin-bottom: 18px;
 }
 
 .card-actions {
   display: flex;
-  gap: 4px;
+  gap: 8px;
 }
 
 .xp-button {
   font-family: 'Tahoma', sans-serif;
-  font-size: 11px;
-  padding: 3px 10px;
+  font-size: 13px;
+  padding: 7px 16px;
   border: 2px solid;
   border-color: #fff #848484 #848484 #fff;
   background: linear-gradient(180deg, #f5f3ee 0%, #dbd8ce 100%);
   color: #000;
   cursor: pointer;
-  min-width: 70px;
+  min-width: 86px;
   text-align: center;
   box-shadow: 1px 1px 0 #fff inset, -1px -1px 0 #aca899 inset;
 }
@@ -326,7 +329,7 @@ body {
 }
 
 .display-info {
-  font-size: 10px;
+  font-size: 12px;
   color: #555;
   margin-top: 4px;
 }
@@ -342,7 +345,7 @@ body {
 }
 
 .modal-window {
-  width: min(380px, 95vw);
+  width: min(480px, 94vw);
   border: 2px solid #0a246a;
   border-radius: 8px 8px 4px 4px;
   box-shadow:
@@ -364,23 +367,23 @@ body {
 .modal-titlebar-title {
   color: #fff;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 14px;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .modal-body {
-  padding: 14px 16px 16px;
+  padding: 22px 24px 24px;
 }
 
 .modal-body h2 {
-  font-size: 13px;
+  font-size: 18px;
   font-weight: bold;
   color: #0a246a;
   margin-bottom: 4px;
 }
 
 .modal-body p {
-  font-size: 11px;
+  font-size: 13px;
   color: #555;
   margin-bottom: 12px;
 }
@@ -391,7 +394,7 @@ body {
 
 .modal-field label {
   display: block;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: bold;
   color: #000;
   margin-bottom: 3px;
@@ -402,7 +405,7 @@ body {
 }
 
 .field-error {
-  font-size: 10px;
+  font-size: 12px;
   color: #cc0000;
   margin-top: 2px;
   display: block;
@@ -446,6 +449,68 @@ body {
   text-align: center;
   padding: 30px;
   color: #808080;
-  font-size: 11px;
+  font-size: 14px;
   grid-column: 1 / -1;
+}
+
+@media (max-width: 760px) {
+  body {
+    padding: 10px;
+  }
+
+  .xp-window {
+    min-height: calc(100vh - 20px);
+  }
+
+  .xp-window-content {
+    padding: 14px;
+    min-height: calc(100vh - 82px);
+  }
+
+  .xp-panel {
+    padding: 14px;
+  }
+
+  .xp-panel-title {
+    margin: -14px -14px 14px;
+  }
+
+  .page-header,
+  .search-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .xp-titlebar-title {
+    font-size: 12px;
+  }
+
+  .xp-titlebar-btn {
+    width: 23px;
+    height: 22px;
+  }
+
+  .xp-menubar-item {
+    padding: 4px 6px;
+    font-size: 11px;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-header-text h1 {
+    font-size: 20px;
+  }
 }

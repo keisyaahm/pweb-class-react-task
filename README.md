@@ -16,6 +16,7 @@ Aplikasi manajemen produk berbasis React dengan tema antarmuka Windows XP Luna. 
 - Hapus produk dengan konfirmasi
 - Pencarian produk berdasarkan nama secara real-time
 - Tema antarmuka Windows XP Luna (title bar biru, tombol 3D, font Tahoma)
+- Layout responsif: jendela aplikasi melebar pada desktop dan berubah menjadi 2 kolom atau 1 kolom pada layar kecil
 
 ## Instalasi dan Menjalankan
 
