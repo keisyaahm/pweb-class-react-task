@@ -1,10 +1,20 @@
+import { useEffect, useState } from 'react'
 import { NavLink, Routes, Route } from 'react-router-dom'
 import ProductsPage from './pages/ProductsPage.jsx'
 import AboutPage from './pages/AboutPage.jsx'
+import AppearancePage from './pages/AppearancePage.jsx'
 
 function App() {
+  const [compact, setCompact] = useState(
+    () => localStorage.getItem('48orineshop-view') === 'compact'
+  )
+
+  useEffect(() => {
+    localStorage.setItem('48orineshop-view', compact ? 'compact' : 'standard')
+  }, [compact])
+
   return (
-    <div className="xp-window">
+    <div className={`xp-window ${compact ? 'compact-view' : ''}`}>
       <div className="xp-titlebar">
         <div className="xp-titlebar-left">
           <span className="xp-titlebar-icon">🛒</span>
@@ -35,14 +45,32 @@ function App() {
         >
           Tentang
         </NavLink>
-        <span className="xp-menubar-item">Tampilan</span>
-        <span className="xp-menubar-item">Bantuan</span>
+        <NavLink
+          to="/tampilan"
+          className={({ isActive }) =>
+            isActive ? 'xp-menubar-item active' : 'xp-menubar-item'
+          }
+        >
+          Tampilan
+        </NavLink>
+        <a
+          className="xp-menubar-item"
+          href="https://www.linkedin.com/home?originalSubdomain=id"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Bantuan
+        </a>
       </div>
 
       <div className="xp-window-content">
         <Routes>
           <Route path="/" element={<ProductsPage />} />
           <Route path="/tentang" element={<AboutPage />} />
+          <Route
+            path="/tampilan"
+            element={<AppearancePage compact={compact} onChange={setCompact} />}
+          />
         </Routes>
       </div>
     </div>
