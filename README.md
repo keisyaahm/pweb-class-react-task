@@ -65,8 +65,6 @@ src/
 
 ## Bukti Pengujian
 
-Screenshot berikut diambil dari aplikasi yang berjalan di `http://localhost:5173` menggunakan browser Chrome melalui script Puppeteer:
-
 1. Halaman utama: [01-halaman-utama.png](docs/evidence/01-halaman-utama.png)
 2. Pencarian produk: [02-pencarian-produk.png](docs/evidence/02-pencarian-produk.png)
 3. Modal tambah produk: [03-modal-tambah-produk.png](docs/evidence/03-modal-tambah-produk.png)
