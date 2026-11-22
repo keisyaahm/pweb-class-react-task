@@ -9,7 +9,7 @@ dengan React, React Router v7, dan Tailwind CSS v4, kemudian dihubungkan ke
 REST API Express agar data CRUD tersimpan di PostgreSQL melalui Prisma.
 
 Backend tugas ini berada di repository
-[pweb-class-express-database-task](https://github.com/keisyaahm/pweb-class-express-database-task).
+[pweb-class-express-database-task](https://github.com/keisyaahm/pweb-class-express-database-task) (branch `tugas-4` / [PR #2](https://github.com/keisyaahm/pweb-class-express-database-task/pull/2)).
 
 ## Fitur yang Dikerjakan
 
@@ -122,9 +122,9 @@ Backend berjalan di `http://localhost:3000`.
 Buka terminal lain:
 
 ```bash
-git clone https://github.com/keisyaahm/pweb-class-react-tailwind-task.git
-cd pweb-class-react-tailwind-task
-git checkout tugas-4
+git clone https://github.com/keisyaahm/pweb-class-react-task.git
+cd pweb-class-react-task
+git checkout main
 npm install
 copy .env.example .env
 npm run dev
@@ -173,3 +173,17 @@ npm run test:capture
 Perintah tersebut melakukan build, menjalankan aplikasi final, menguji skenario
 utama, dan menyimpan screenshot ke `docs/evidence/`. Data demo dikembalikan ke
 delapan produk awal setelah pengujian selesai.
+
+---
+
+## Daftar Tugas Pemrograman Web C
+
+Berikut adalah daftar seluruh repository dan Pull Request untuk tugas mata kuliah Pemrograman Web C:
+
+| No | Tugas | Topik / Deskripsi | Repository | Branch / PR |
+| :--: | :--- | :--- | :--- | :--- |
+| 1 | **Tugas 1 (Week 9 & 10)** | Express REST API, Prisma ORM, PostgreSQL (Neon) | [pweb-class-express-database-task](https://github.com/keisyaahm/pweb-class-express-database-task) | [PR #1](https://github.com/keisyaahm/pweb-class-express-database-task/pull/1) |
+| 2 | **Tugas 2 (Week 5 & 6)** | Interaktivitas DOM & JavaScript (Task Tracker) | [5027251068_TaskTracker](https://github.com/keisyaahm/5027251068_TaskTracker) | `main` |
+| 3 | **Tugas 3 (Week 12)** | Fundamental React (Manajemen Produk 48ORINESHOP) | [pweb-class-react-task](https://github.com/keisyaahm/pweb-class-react-task) | [PR #1](https://github.com/keisyaahm/pweb-class-react-task/pull/1) (`tugas-3`) |
+| 4 | **Tugas 4 (Week 13)** | React Router v7, Tailwind CSS, Integrasi Backend Express | Frontend: [pweb-class-react-task](https://github.com/keisyaahm/pweb-class-react-task)<br>Backend: [pweb-class-express-database-task](https://github.com/keisyaahm/pweb-class-express-database-task) | Frontend: [PR #2](https://github.com/keisyaahm/pweb-class-react-task/pull/2)<br>Backend: [PR #2](https://github.com/keisyaahm/pweb-class-express-database-task/pull/2) |
+
