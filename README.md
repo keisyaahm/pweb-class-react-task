@@ -117,6 +117,12 @@ npm start
 
 Backend berjalan di `http://localhost:3000`.
 
+Untuk memeriksa database PostgreSQL secara visual via GUI Prisma Studio:
+```bash
+npx prisma studio
+```
+Prisma Studio dapat diakses di browser pada URL: `http://localhost:5555`.
+
 ### 2. Frontend
 
 Buka terminal lain:
