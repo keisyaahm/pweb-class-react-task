@@ -170,17 +170,13 @@ npm run build
 
 ![Produk hasil integrasi React dan Express](docs/evidence/06-modal-tambah-success.png)
 
-## Verifikasi Otomatis
+## Reset Data Produk
 
-Pastikan backend aktif di port 3000, lalu jalankan:
+Jika ingin mengembalikan data inventaris ke kondisi awal (8 produk default), buka halaman **Pengaturan** pada aplikasi lalu klik tombol **Reset Data**, atau bisa juga memanggil endpoint backend secara langsung:
 
 ```bash
-npm run test:capture
+curl -X POST http://localhost:3000/products/reset
 ```
-
-Perintah tersebut melakukan build, menjalankan aplikasi final, menguji skenario
-utama, dan menyimpan screenshot ke `docs/evidence/`. Data demo dikembalikan ke
-delapan produk awal setelah pengujian selesai.
 
 ---
 
