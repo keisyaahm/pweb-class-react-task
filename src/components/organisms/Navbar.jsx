@@ -16,6 +16,15 @@ export default function Navbar({ totalProducts = 0 }) {
       <NavLink to="/settings" className={menuClass}>
         Pengaturan
       </NavLink>
+      <a
+        href="https://www.linkedin.com/in/keisyahalimahmulia"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="xp-menubar-item"
+        title="Bantuan - Hubungi Keisya di LinkedIn"
+      >
+        Bantuan
+      </a>
     </nav>
   );
 }
