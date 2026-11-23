@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
-import AppLayout from "./layouts/AppLayout";
+import PageLayout from "./components/templates/PageLayout";
 import DashboardPage from "./pages/DashboardPage";
 import ProductsPage from "./pages/ProductsPage";
 import ProductDetailPage from "./pages/ProductDetailPage";
@@ -105,7 +105,7 @@ export default function App() {
         <Route
           path="/"
           element={
-            <AppLayout
+            <PageLayout
               totalProducts={products.length}
               isLoading={isLoading}
               apiError={apiError}
