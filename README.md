@@ -74,33 +74,26 @@ edit, hapus, dan reset dijalankan ke Express API terlebih dahulu, lalu hasilnya
 disinkronkan ke state React. Data tetap tersedia setelah reload karena tersimpan
 di PostgreSQL.
 
-## Struktur Frontend
+## Penerapan Atomic Design
+
+Struktur komponen mengikuti acuan Atomic Design pada template perkuliahan [react-template](https://github.com/anasmcfudy/react-template):
 
 ```text
 src/
 |-- components/
-|   |-- atoms/          # Badge, Button, Input
-|   |-- molecules/      # FormField, ProductCard, StatCard
-|   `-- organisms/      # Navbar, grid/list, dan modal
-|-- data/
-|   `-- initialProducts.js
-|-- layouts/
-|   `-- AppLayout.jsx   # Layout bersama dan Outlet
-|-- pages/
-|   |-- DashboardPage.jsx
-|   |-- ProductsPage.jsx
-|   |-- ProductDetailPage.jsx
-|   |-- SettingsPage.jsx
-|   `-- NotFoundPage.jsx
-|-- services/
-|   `-- productApi.js   # Request ke Express API
-|-- App.jsx             # Route dan state bersama
-|-- main.jsx            # BrowserRouter
-`-- index.css           # Tailwind CSS v4
+|   |-- atoms/          # Komponen dasar terkecil: Button, Input, Badge
+|   |-- molecules/      # Gabungan atom: ProductCard, FormField, StatCard
+|   |-- organisms/      # Komponen kompleks: ProductGrid, ProductList, Navbar, ProductModal, ConfirmModal
+|   |-- templates/      # PageLayout pembungkus struktur bersama (Windows XP frame) dan Outlet
+|   `-- pages/          # Koordinasi halaman dan state: Dashboard, Products, Detail, Settings, 404
+|-- data/               # Dataset seeder awal dan konfigurasi
+|-- services/           # Service komunikasi REST API Express (productApi.js)
+|-- App.jsx             # Rute dan manajemen state bersama
+|-- main.jsx            # Entry point browser dan BrowserRouter
+`-- index.css           # Styling Tailwind CSS v4 bertema Windows XP Luna
 ```
 
-Komponen dipisahkan agar tombol, input, kartu, dan modal dapat digunakan kembali
-secara konsisten.
+Alur data berjalan hierarkis: `Page -> Template (PageLayout) -> Organism (ProductGrid) -> Molecule (ProductCard) -> Atom (Button)`. Callback aksi dari tombol dikirimkan kembali ke komponen pengelola state.
 
 ## Cara Menjalankan
 
